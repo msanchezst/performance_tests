@@ -8,6 +8,7 @@ import socket
 import statistics
 import platform
 import contextlib
+import os
 
 # Generate a timestamp for the log file name
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -77,6 +78,19 @@ def measure_download_speed():
 
 def bytes_to_megabits(bytes_value):
     return (float(bytes_value) * 8) / 1_000_000
+
+
+def log_system_profile():    
+    command = 'system_profiler SPSoftwareDataType SPHardwareDataType'
+    result = subprocess.run(command, shell=True, capture_output=True, text=True, check=True)
+    # removing serial numbers and hardware UUIDs
+    keywords = ["Serial Number", "Hardware UUID", "Provisioning UDID"]
+    filtered_lines = [
+        line for line in result.stdout.splitlines()
+        if not any(keyword in line for keyword in keywords)
+    ]
+    result_string = "\n".join(filtered_lines)
+    logging.info(result_string)
 
 def log_speed_test():
     try:
@@ -148,7 +162,8 @@ def main():
     signal.signal(signal.SIGINT, signal_handler)
     aws_dns_server = "169.254.169.253"
     google_dns = "8.8.8.8"
-    
+
+    log_system_profile()
     print("=== Starting initial speed test. Downloading 100MB file. Please wait... ===")
     log_speed_test()
     print("=== Speed test completed. Starting continuous monitoring. Press Ctrl+C to stop. ===")
