@@ -160,7 +160,7 @@ def signal_handler(sig, frame):
 
 def main():
     signal.signal(signal.SIGINT, signal_handler)
-    aws_dns_server = "169.254.169.253"
+    cloudflare_dns_server = "1.1.1.1"
     google_dns = "8.8.8.8"
 
     log_system_profile()
@@ -173,9 +173,9 @@ def main():
             # Log system stats
             log_system_stats()
             
-            # Measure latency to AWS DNS
-            aws_results = measure_latency(aws_dns_server)
-            log_latency_stats(aws_dns_server, aws_results)
+            # Measure latency to Cloudflare DNS
+            aws_results = measure_latency(cloudflare_dns_server)
+            log_latency_stats(cloudflare_dns_server, aws_results)
             
             # Measure latency to Google DNS
             google_results = measure_latency(google_dns)

@@ -12,7 +12,7 @@ This folder contains a collection of Python scripts designed to monitor and capt
 - **Memory Usage Monitoring**: Reports active and total memory usage in MB.
 - **Network I/O Monitoring**: Tracks incoming and outgoing network bytes.
 - **Download Speed Test**: Measures download speed using http://ipv4.download.thinkbroadband.com 100MB sample file.
-- **Latency Measurement**: Measures latency to specified DNS servers (e.g., AWS and Google).
+- **Latency Measurement**: Measures latency to specified DNS servers (e.g., Cloudflare and Google).
 - **Ping Utility**: Pings a specified host (e.g., google.com) and logs the results.
 - **Logging**: All metrics are logged to a timestamped file for easy reference.
 
