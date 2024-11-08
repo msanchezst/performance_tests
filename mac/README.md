@@ -4,7 +4,7 @@ This folder contains a collection of Python scripts designed to monitor and capt
 
 
 ## mac_local_tests.py
-`mac_local_tests.py` is a Python script designed to capture performance metrics on macOS systems. It monitors system metrics such as CPU usage, memory usage, and network performance, logging the results for analysis. 
+`mac_local_tests.py` is a Python script designed to capture performance metrics on macOS systems. It monitors system metrics such as CPU usage, memory usage, and network performance, logging the results for analysis. The script has been tested in MacOSX Ventura (13.3)
 
 #### Features
 
