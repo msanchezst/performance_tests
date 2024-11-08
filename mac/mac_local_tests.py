@@ -84,7 +84,7 @@ def log_system_profile():
     command = 'system_profiler SPSoftwareDataType SPHardwareDataType'
     result = subprocess.run(command, shell=True, capture_output=True, text=True, check=True)
     # removing serial numbers and hardware UUIDs
-    keywords = ["Serial Number", "Hardware UUID", "Provisioning UDID"]
+    keywords = ["Serial Number", "UUID"]
     filtered_lines = [
         line for line in result.stdout.splitlines()
         if not any(keyword in line for keyword in keywords)
