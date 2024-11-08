@@ -71,7 +71,7 @@ def log_system_stats():
     logging.info(log_message)
 
 def measure_download_speed():
-    command = 'curl -s -S -n http://ipv4.download.thinkbroadband.com/1MB.zip -o /dev/null -w "%{time_total},%{size_download},%{speed_download}"'
+    command = 'curl -s -S -n http://ipv4.download.thinkbroadband.com/100MB.zip -o /dev/null -w "%{time_total},%{size_download},%{speed_download}"'
     result = subprocess.run(command, shell=True, capture_output=True, text=True, check=True)
     return result.stdout.strip()
 
@@ -149,7 +149,7 @@ def main():
     aws_dns_server = "169.254.169.253"
     google_dns = "8.8.8.8"
     
-    print("=== Starting initial speed test. Please wait... ===")
+    print("=== Starting initial speed test. Downloading 100MB file. Please wait... ===")
     log_speed_test()
     print("=== Speed test completed. Starting continuous monitoring. Press Ctrl+C to stop. ===")
     

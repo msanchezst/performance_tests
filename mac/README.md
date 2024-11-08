@@ -4,14 +4,14 @@ This folder contains a collection of Python scripts designed to monitor and capt
 
 
 ## mac_local_tests.py
-`mac_local_tests.py` is a Python script designed to perform performance tests on macOS systems. It monitors key system metrics such as CPU usage, memory usage, and network performance, logging the results for analysis. This script is particularly useful for assessing system health and diagnosing performance issues.
+`mac_local_tests.py` is a Python script designed to capture performance metrics on macOS systems. It monitors system metrics such as CPU usage, memory usage, and network performance, logging the results for analysis. 
 
 #### Features
 
 - **CPU Usage Monitoring**: Logs the current CPU usage percentage.
 - **Memory Usage Monitoring**: Reports active and total memory usage in MB.
 - **Network I/O Monitoring**: Tracks incoming and outgoing network bytes.
-- **Download Speed Test**: Measures download speed from a specified URL.
+- **Download Speed Test**: Measures download speed using http://ipv4.download.thinkbroadband.com 100MB sample file.
 - **Latency Measurement**: Measures latency to specified DNS servers (e.g., AWS and Google).
 - **Ping Utility**: Pings a specified host (e.g., google.com) and logs the results.
 - **Logging**: All metrics are logged to a timestamped file for easy reference.
